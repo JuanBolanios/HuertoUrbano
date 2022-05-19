@@ -38,6 +38,9 @@ namespace HuertoUrbano
                  .AddDefaultUI()
                 .AddDefaultTokenProviders();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.ConfigureApplicationCookie(config => {
+                config.LoginPath = "/Identity/Account/Login";
+            });
             services.AddRazorPages();
         }
 

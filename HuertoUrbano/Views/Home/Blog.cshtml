@@ -1,0 +1,46 @@
+﻿@model PublicacViewModel
+@{
+    ViewData["Title"] = "Blog";
+}
+
+<h1>Blog</h1>
+
+<form method="post" asp-controller="Home" asp-action="Publicacion" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text=danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Descripcion"></label>
+        <input asp-for="Descripcion" class="form-control" />
+        <span asp-validation-for="Descripcion" class="text=danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TipoHortaliza"></label>
+        <select asp-for="TipoHortaliza" asp-items="Model.TipoHortalizas" class="form-control"></select>
+        <span asp-validation-for="TipoHortaliza" class="text=danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LugarPlantado"></label>
+        <select asp-for="LugarPlantado" asp-items="Model.LugaresPlantados" class="form-control"></select>
+        <span asp-validation-for="LugarPlantado" class="text=danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Temporada"></label>
+        <select asp-for="Temporada" asp-items="Model.Temporadas" class="form-control"></select>
+        <span asp-validation-for="Temporada" class="text=danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Ciudad"></label>
+        <input asp-for="Ciudad" class="form-control" />
+        <span asp-validation-for="Ciudad" class="text=danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Fotografia"></label>
+        <input asp-for="Fotografia" class="form-control" />
+        <span asp-validation-for="Fotografia" class="text=danger"></span>
+    </div>
+    <button type="submit">Guardar</button>
+</form>

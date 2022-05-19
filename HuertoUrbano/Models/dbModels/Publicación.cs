@@ -38,5 +38,6 @@ namespace HuertoUrbano.Models.dbModels
         [ForeignKey(nameof(TipoHortaliza))]
         [InverseProperty("Publicacións")]
         public virtual TipoHortaliza TipoHortalizaNavigation { get; set; }
+        public string Nombre { get; internal set; }
     }
 }
