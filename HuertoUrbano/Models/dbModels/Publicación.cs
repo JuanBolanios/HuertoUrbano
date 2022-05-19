@@ -26,7 +26,9 @@ namespace HuertoUrbano.Models.dbModels
         public string Ciudad { get; set; }
         public string FotoHortaliza { get; set; }
 
-
+        [ForeignKey(nameof(Usuarios))]
+        [InverseProperty(nameof(ApplicationUser.Publicacións))]
+        public virtual ApplicationUser UsuariosNavigation { get; set; }
         [ForeignKey(nameof(LugarPlantado))]
         [InverseProperty("Publicacións")]
         public virtual LugarPlantado LugarPlantadoNavigation { get; set; }

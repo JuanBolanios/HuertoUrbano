@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace HuertoUrbano.Models.dbModels
 {
-    public partial class HuertoUrbanoContext : DbContext
+    public partial class HuertoUrbanoContext : IdentityDbContext<ApplicationUser, IdentityRole<int>, int>
     {
         public HuertoUrbanoContext()
         {
@@ -37,7 +37,7 @@ namespace HuertoUrbano.Models.dbModels
                     .HasForeignKey(d => d.LugarPlantado)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Publicación_LugarPlantado");
-
+                
                 entity.HasOne(d => d.TemporadaNavigation)
                     .WithMany(p => p.Publicacións)
                     .HasForeignKey(d => d.Temporada)
@@ -49,6 +49,11 @@ namespace HuertoUrbano.Models.dbModels
                     .HasForeignKey(d => d.TipoHortaliza)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Publicación_TipoHortaliza");
+
+                entity.HasOne(d => d.UsuariosNavigation)
+                    .WithMany(P => P.Publicacións)
+                    .HasForeignKey(d => d.Usuarios)
+                    .HasConstraintName("FK_Publicación_Usuarios");
             });
 
             modelBuilder.Entity<Vpublicación>(entity =>
