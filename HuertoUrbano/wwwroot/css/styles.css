@@ -1,0 +1,52 @@
+h1{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h2{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.titnav {
+    color: white;
+}
+
+p{
+    text-align: justify;
+    color: red !important;
+}
+
+
+.imainicial{
+    width: 1349px;
+    height: 550px;
+}
+
+.foto1, .foto2, .foto3{
+    margin: 15px;
+    border-radius: 25px;
+}
+
+.foto1{
+    float: left;
+}
+
+.foto2{
+    float: right;
+}
+
+.foto3{
+    float: left;
+}
+
+h5, h6 {
+    text-align: center;
+}
+
+.listas {
+    text-align:left;
+    text-align: justify;
+    color: white;
+}
+
