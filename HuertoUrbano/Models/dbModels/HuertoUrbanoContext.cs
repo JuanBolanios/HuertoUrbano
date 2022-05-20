@@ -32,18 +32,6 @@ namespace HuertoUrbano.Models.dbModels
 
             modelBuilder.Entity<Publicación>(entity =>
             {
-                entity.HasOne(d => d.LugarPlantadoNavigation)
-                    .WithMany(p => p.Publicacións)
-                    .HasForeignKey(d => d.LugarPlantado)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Publicación_LugarPlantado");
-                
-                entity.HasOne(d => d.TemporadaNavigation)
-                    .WithMany(p => p.Publicacións)
-                    .HasForeignKey(d => d.Temporada)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Publicación_Temporada");
-
                 entity.HasOne(d => d.TipoHortalizaNavigation)
                     .WithMany(p => p.Publicacións)
                     .HasForeignKey(d => d.TipoHortaliza)

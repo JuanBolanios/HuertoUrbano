@@ -20,14 +20,14 @@ namespace HuertoUrbano.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly HuertoUrbanoContext _dbcontext;
-        private readonly IHostingEnvironment _hostingEnviroment;
+        private readonly IHostingEnvironment _hostingEnvironment;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger, HuertoUrbanoContext dbcontext, IHostingEnvironment hostingEnviroment, UserManager<ApplicationUser> userManager)
+        public HomeController(ILogger<HomeController> logger, HuertoUrbanoContext dbcontext, IHostingEnvironment hostingEnvironment, UserManager<ApplicationUser> userManager)
         {
             _logger = logger;
             _dbcontext = dbcontext;
-            _hostingEnviroment = hostingEnviroment;
+            _hostingEnvironment = hostingEnvironment;
             _userManager = userManager;
         }
 
@@ -61,16 +61,16 @@ namespace HuertoUrbano.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> Registro(PublicacViewModel rvm)
+        public async Task<IActionResult> Blog(PublicacViewModel rvm)
         {
             if(ModelState.IsValid)
             {
                 try
                 {
-                    string wwwRootPath = _hostingEnviroment.WebRootPath;
+                    string wwwRootPath = _hostingEnvironment.WebRootPath;
                     string nombreArchivo = Path.GetFileNameWithoutExtension(rvm.Fotografia.FileName);
-                    string extensionArchivos = Path.GetExtension(rvm.Fotografia.FileName);
-                    nombreArchivo = nombreArchivo + DateTime.Now.ToString("yymmssfff") + extensionArchivos;
+                    string extensionArchivo = Path.GetExtension(rvm.Fotografia.FileName);
+                    nombreArchivo = nombreArchivo + DateTime.Now.ToString("yymmssfff") + extensionArchivo;
 
                     string path = Path.Combine(wwwRootPath + "/img/imgsubidas", nombreArchivo);
                     using (var fileStream = new FileStream(path, FileMode.Create))
@@ -86,22 +86,21 @@ namespace HuertoUrbano.Controllers
                             Nombre = rvm.Nombre,
                             Descripcion = rvm.Descripcion,
                             TipoHortaliza = rvm.TipoHortaliza,
-                            Temporada = rvm.Temporada,
-                            LugarPlantado = rvm.LugarPlantado,
                             Ciudad = rvm.Ciudad,
-                            FotoHortaliza = "/img/imgsubidad" + nombreArchivo
+                            FotoHortaliza = "/img/imgsubidas" + nombreArchivo
                         };
                         _dbcontext.Publicacións.Add(hortaliza);
                         _dbcontext.SaveChanges();
                     }
-                } catch (Exception ex)
+                }catch (Exception ex)
                 {
                     return StatusCode(500, ex.Message);
                 }
-               
+                
             }
             return View(rvm);
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

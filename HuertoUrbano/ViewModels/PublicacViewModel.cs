@@ -22,14 +22,6 @@ namespace HuertoUrbano.ViewModels
         public int TipoHortaliza { get; set; }
         public List<SelectListItem> TipoHortalizas { get; set; }
         [Required(ErrorMessage = "Este campo el obligatorio")]
-        [DisplayName("Lugar de Plantado:")]
-        public int LugarPlantado { get; set; }
-        public List<SelectListItem> LugaresPlantados { get; set; }
-        [Required(ErrorMessage = "Este campo el obligatorio")]
-        [DisplayName("Temporada:")]
-        public int Temporada { get; set; }
-        public List<SelectListItem> Temporadas { get; set; }
-        [Required(ErrorMessage = "Este campo el obligatorio")]
         [DisplayName("Ciudad:")]
         public string Ciudad { get; set; }
         public IFormFile Fotografia { get; set; }

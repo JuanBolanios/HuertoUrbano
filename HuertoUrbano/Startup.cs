@@ -35,7 +35,6 @@ namespace HuertoUrbano
 
             services.AddIdentity<ApplicationUser, IdentityRole<int>>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<HuertoUrbanoContext>()
-                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.ConfigureApplicationCookie(config => {
