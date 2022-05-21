@@ -3,17 +3,97 @@
     ViewData["Title"] = "Huerto Urbano";
 }
 
-<h1>Huerto Urbano</h1>
-
 <h2>Hortalizas recomendadas para plantar en Nuevo León</h2>
 <br>
 <form method="post" asp-controller="Home" asp-action="Blog" enctype="multipart/form-data">
-    
+
     <div class="form-group">
         <label asp-for="TipoHortaliza"></label>
         <select asp-for="TipoHortaliza" asp-items="Model.TipoHortalizas" class="form-control"></select>
         <span asp-validation-for="TipoHortaliza" class="text=danger"></span>
     </div>
     
+    <br><br>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <h3>Aguacate</h3>
+                <img src="/img/Aguacate.jpg" class="d-block w-100" alt="..." style="width: 50%;"> 
+            </div>
+            <div class="carousel-item">
+                <h3>Brócoli</h3>
+                <img src="/img/Brocoli.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Cilantro</h3>
+                <img src="/img/Cilantro.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Calabacines</h3>
+                <img src="/img/calabacines.png" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Fresa</h3>
+                <img src="/img/Fresa.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Habanero</h3>
+                <img src="/img/Habanero.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Lechuga</h3>
+                <img src="/img/Lechuga.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Melón</h3>
+                <img src="/img/Melon.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Pepino</h3>
+                <img src="/img/Pepino.png" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Perejil</h3>
+                <img src="/img/Perejil.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Rábano</h3>
+                <img src="/img/Rabano.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Remolacha</h3>
+                <img src="/img/Remolacha.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Sandía</h3>
+                <img src="/img/Sandia.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Tomate</h3>
+                <img src="/img/Tomate.png" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Zanahoria</h3>
+                <img src="/img/Zanahoria.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Ajo</h3>
+                <img src="/img/Ajo.png" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+            <div class="carousel-item">
+                <h3>Piquín</h3>
+                <img src="/img/Piquín.jpg" class="d-block w-100" alt="..." style="width: 50%;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </form>
 

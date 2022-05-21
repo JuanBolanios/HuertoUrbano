@@ -1,0 +1,80 @@
+body {
+    background-image: url(../img/FondoHort.jpg);
+    background-repeat: no-repeat; /*para que la imagen no se repita en todo el fondo*/
+    background-position: center; /*la imagen se posiciona en el centro y se puede mover hacia abajo*/
+    background-attachment: fixed; /*la imagen está en el centro, se puede bajar pero no se mueve*/
+    background-size: cover; /*la imagen cubre todo el fondo*/
+    position: relative;
+}
+
+/*Fuente Personalizada*/
+@font-face {
+    font-family: 'Muthiara';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../FuentesPersonalizadas/Muthiara\ demo\ version.otf);
+}
+
+@font-face {
+    font-family: 'Day';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../FuentesPersonalizadas/Daylove_DEMO.ttf);
+}
+
+
+h1 {
+    background-color: rgba(231, 217, 134, 0.8);
+    font-family: 'Muthiara'; /*Fuente Personalizada*/
+    text-align: center;
+    color:rgb(4, 37, 4);
+    font-size: 300%;
+}
+
+.cont1 {
+    background-color: rgba(0, 0, 0. 0.5);
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+h3 {
+    background-color: rgba(206, 218, 100, 0.7);
+    font-family:'Times New Roman', Times, serif;
+    font-size: 175%;
+    text-align: center;
+}
+
+.text1{
+    background-color: rgba(90, 105, 6, 0.25);
+    padding-top: 0px;
+}
+
+.car {
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 1%;
+    background-color: rgba(136, 134, 134, 0.5);
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Day';
+    font-size: large;
+    background-color: rgb(226, 238, 173);
+}
+
+p, ul, ol {
+    font-family: serif;
+    font-size: large;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: justify;
+}
+
+h4 {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: small;
+    background-color: rgba(255, 255, 255, 0.5);
+}

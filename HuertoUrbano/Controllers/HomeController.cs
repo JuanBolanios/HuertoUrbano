@@ -60,6 +60,18 @@ namespace HuertoUrbano.Controllers
         }
 
         [Authorize]
+        public IActionResult Calendario()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult Tienda()
+        {
+            return View();
+        }
+
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Blog(PublicacViewModel rvm)
         {
